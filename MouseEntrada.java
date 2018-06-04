@@ -5,13 +5,13 @@ import java.awt.event.MouseListener;
 
 import prueba.Dibujar.STATE;
 
-public class MouseEntrada implements MouseListener{
-	Dibujar obj;	
+public class MouseEntrada implements MouseListener {
+	Dibujar obj;
 
-	public MouseEntrada(Dibujar obj){
-		this.obj=obj;
+	public MouseEntrada(Dibujar obj) {
+		this.obj = obj;
 	}
-	
+
 	@Override
 	public void mouseClicked(MouseEvent me) {
 
@@ -30,21 +30,22 @@ public class MouseEntrada implements MouseListener{
 	@Override
 	public void mousePressed(MouseEvent me) {
 		/**
-			public Rectangle botonJugar=new Rectangle(350, 200, 500, 50); //X, Y, WIDTH, HEIGHT
-			public Rectangle botonSalir=new Rectangle(350, 300, 500, 50); //X, Y, WIDTH, HEIGHT
-		**/
-		int mx=me.getX();
-		int my=me.getY();
-		//CASO PARA BOTON JUGAR
-		if(mx>350&&mx<850){
-			if(my>200&&my<250){
-				obj.State=STATE.GAME;
+		 * public Rectangle botonJugar=new Rectangle(550, 400, 150, 25); //X, Y, WIDTH, HEIGHT 
+		 * public Rectangle botonSalir=new Rectangle(550, 450, 150, 25); //X, Y, WIDTH, HEIGHT
+		 **/
+		int mx = me.getX();
+		int my = me.getY();
+		// CASO PARA BOTON JUGAR
+		if (mx > 550 && mx < 700) {
+			if (my > 400 && my < 425) {
+				obj.reset();
+				obj.State = STATE.GAME;
 			}
 		}
-		
-		//CASO BOTON SALIR
-		if(mx>350&&mx<850){
-			if(my>300&&my<350){
+
+		// CASO BOTON SALIR
+		if (mx > 350 && mx < 700) {
+			if (my > 450 && my < 475) {
 				System.exit(0);
 			}
 		}
@@ -52,9 +53,7 @@ public class MouseEntrada implements MouseListener{
 
 	@Override
 	public void mouseReleased(MouseEvent me) {
-		
-	}
-	
 
+	}
 
 }

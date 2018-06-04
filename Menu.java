@@ -16,17 +16,12 @@ public class Menu{
 	Dibujar obj;
 	int o=0;
 	BufferedImage i0;
-	BufferedImage i1;
-	BufferedImage i2;
-	Font fnt0=new Font("arial", Font.BOLD, 90);
-	Font fnt1=new Font("arial", Font.BOLD, 30);
+	Font fnt1=new Font("arial", Font.BOLD, 20);
 	
 	public Menu(Dibujar obj){
 		this.obj=obj;
 		try {
 			this.i0=ImageIO.read(new FileInputStream("resources/Menu/Fondo.png"));
-			this.i1=ImageIO.read(new FileInputStream("resources/Menu/Bomberman1.png"));
-			this.i2=ImageIO.read(new FileInputStream("resources/Menu/Bomberman2.png"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -37,20 +32,16 @@ public class Menu{
 				
 	}
 	
-	public Rectangle botonJugar=new Rectangle(350, 200, 500, 50); //X, Y, WIDTH, HEIGHT
-	public Rectangle botonSalir=new Rectangle(350, 300, 500, 50); //X, Y, WIDTH, HEIGHT
+	public Rectangle botonJugar=new Rectangle(550, 400, 150, 25); //X, Y, WIDTH, HEIGHT
+	public Rectangle botonSalir=new Rectangle(550, 450, 150, 25); //X, Y, WIDTH, HEIGHT
 	
 	public void paint(Graphics g){
 		//IMAGENES
-		g.drawImage(i0, 0, 0, i0.getWidth(), i0.getHeight(), null); //FONDO
-		g.drawImage(i1, 70, 100, 300, 400, null); //PRIMER BOMBERMAN
-		g.drawImage(i2, 890, 150, 250, 250, null); //SEGUNDO BOMBERMAN	
+		g.drawImage(i0, 0, 20, 1200, 605, null); //FONDO
 				
 		Graphics2D g2d=(Graphics2D) g;
-				
-		g.setFont(fnt0);
+
 		g.setColor(Color.black);
-		g.drawString("BOMBERMAN", 310, 120);
 				
 		g.setFont(fnt1);
 				
@@ -58,13 +49,13 @@ public class Menu{
 		g2d.fill(botonJugar);				
 		g2d.setColor(Color.black);
 		g2d.draw(botonJugar);
-		g.drawString("Jugar", botonJugar.x+210, botonJugar.y+35);		
+		g.drawString("Jugar", botonJugar.x+45, botonJugar.y+20);		
 		
 		g2d.setColor(new Color(24, 165, 255));
 		g2d.fill(botonSalir);		
 		g2d.setColor(Color.black);
 		g2d.draw(botonSalir);
-		g.drawString("Salir", botonSalir.x+210, botonSalir.y+35);							
+		g.drawString("Salir", botonSalir.x+45, botonSalir.y+20);							
 		
 	}
 
